@@ -1,0 +1,17 @@
+C:\Users\admin\source\repos\DKSystem\DKSystem\bin\Debug\DKSystem.exe.config
+C:\Users\admin\source\repos\DKSystem\DKSystem\bin\Debug\DKSystem.exe
+C:\Users\admin\source\repos\DKSystem\DKSystem\bin\Debug\DKSystem.pdb
+C:\Users\admin\source\repos\DKSystem\DKSystem\bin\Debug\Guna.UI2.dll
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.Properties.Resources.resources
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.csproj.GenerateResource.cache
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.csproj.CoreCompileInputs.cache
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.csproj.CopyComplete
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.exe
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.pdb
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.Food.resources
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.Drinks.resources
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.Desserts.resources
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.Form2.resources
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.frmPOS.resources
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.Model.ucProduct.resources
+C:\Users\admin\source\repos\DKSystem\DKSystem\obj\Debug\DKSystem.csproj.AssemblyReference.cache
