@@ -63,6 +63,16 @@ namespace DKSystem.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Add_Book {
+            get {
+                object obj = ResourceManager.GetObject("Add Book", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Black_Minimalist_Food_Menu_Poster {
             get {
                 object obj = ResourceManager.GetObject("Black Minimalist Food Menu Poster", resourceCulture);
@@ -76,6 +86,36 @@ namespace DKSystem.Properties {
         internal static System.Drawing.Bitmap Black_Minimalist_Food_Menu_Poster1 {
             get {
                 object obj = ResourceManager.GetObject("Black Minimalist Food Menu Poster1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap bx_food_menu {
+            get {
+                object obj = ResourceManager.GetObject("bx_food-menu", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap ic_baseline_minus {
+            get {
+                object obj = ResourceManager.GetObject("ic_baseline-minus", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icon_park_outline_add {
+            get {
+                object obj = ResourceManager.GetObject("icon-park-outline_add", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
