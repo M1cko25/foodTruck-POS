@@ -29,6 +29,7 @@ namespace DKSystem
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             this.date = new System.Windows.Forms.Label();
             this.orderNum = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
@@ -39,6 +40,7 @@ namespace DKSystem
             this.label3 = new System.Windows.Forms.Label();
             this.totalPriceLbl = new System.Windows.Forms.Label();
             this.backBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.productInfo)).BeginInit();
             this.SuspendLayout();
             // 
@@ -144,6 +146,11 @@ namespace DKSystem
             this.backBtn.Text = "Back";
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
+            // guna2DragControl1
+            // 
+            this.guna2DragControl1.DockIndicatorTransparencyValue = 0.6D;
+            this.guna2DragControl1.UseTransparentDrag = true;
+            // 
             // Form1
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -160,6 +167,7 @@ namespace DKSystem
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.MinimumSize = new System.Drawing.Size(438, 702);
             this.Name = "Form1";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Order";
             ((System.ComponentModel.ISupportInitialize)(this.productInfo)).EndInit();
             this.ResumeLayout(false);
@@ -179,5 +187,6 @@ namespace DKSystem
         private System.Windows.Forms.Label label3;
         public System.Windows.Forms.Label totalPriceLbl;
         private Guna.UI2.WinForms.Guna2Button backBtn;
+        private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
     }
 }

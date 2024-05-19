@@ -1,7 +1,8 @@
 {
   "ExpandedNodes": [
-    ""
+    "",
+    "\\DKSystem"
   ],
-  "SelectedNode": "\\DKSystem.sln",
+  "SelectedNode": "\\DKSystem\\Form1.cs",
   "PreviewInSolutionExplorer": false
 }

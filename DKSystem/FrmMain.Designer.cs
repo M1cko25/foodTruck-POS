@@ -31,10 +31,8 @@ namespace DKSystem
         {
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmPOS));
-            this.guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(this.components);
             this.titleBar = new System.Windows.Forms.Panel();
             this.label1 = new System.Windows.Forms.Label();
-            this.guna2AnimateWindow1 = new Guna.UI2.WinForms.Guna2AnimateWindow(this.components);
             this.guna2DragControl1 = new Guna.UI2.WinForms.Guna2DragControl(this.components);
             this.panel1 = new System.Windows.Forms.Panel();
             this.label3 = new System.Windows.Forms.Label();
@@ -46,7 +44,6 @@ namespace DKSystem
             this.guna2Panel4 = new Guna.UI2.WinForms.Guna2Panel();
             this.label2 = new System.Windows.Forms.Label();
             this.guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
-            this.guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
             this.guna2Button3 = new Guna.UI2.WinForms.Guna2Button();
             this.orderPanel = new System.Windows.Forms.FlowLayoutPanel();
@@ -57,7 +54,10 @@ namespace DKSystem
             this.label6 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.totalPriceLbl = new System.Windows.Forms.Label();
-            this.guna2ImageButton1 = new Guna.UI2.WinForms.Guna2ImageButton();
+            this.dineInBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.takeOutBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.drinkBtn = new Guna.UI2.WinForms.Guna2Button();
+            this.dessertbtn = new Guna.UI2.WinForms.Guna2Button();
             this.menuBtn = new Guna.UI2.WinForms.Guna2Button();
             this.btnHam = new System.Windows.Forms.PictureBox();
             this.titleBar.SuspendLayout();
@@ -70,12 +70,6 @@ namespace DKSystem
             ((System.ComponentModel.ISupportInitialize)(this.guna2NumericUpDown1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnHam)).BeginInit();
             this.SuspendLayout();
-            // 
-            // guna2BorderlessForm1
-            // 
-            this.guna2BorderlessForm1.ContainerControl = this;
-            this.guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
-            this.guna2BorderlessForm1.TransparentWhileDrag = true;
             // 
             // titleBar
             // 
@@ -97,10 +91,6 @@ namespace DKSystem
             this.label1.Size = new System.Drawing.Size(174, 25);
             this.label1.TabIndex = 2;
             this.label1.Text = "DUKE FOOD TRUCK";
-            // 
-            // guna2AnimateWindow1
-            // 
-            this.guna2AnimateWindow1.TargetForm = this;
             // 
             // guna2DragControl1
             // 
@@ -139,7 +129,7 @@ namespace DKSystem
             this.generateBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.generateBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
             this.generateBtn.FillColor = System.Drawing.Color.Aqua;
-            this.generateBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.generateBtn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.generateBtn.ForeColor = System.Drawing.Color.Black;
             this.generateBtn.HoverState.CustomBorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(56)))), ((int)(((byte)(236)))));
             this.generateBtn.Location = new System.Drawing.Point(804, 597);
@@ -220,7 +210,8 @@ namespace DKSystem
             // guna2Panel2
             // 
             this.guna2Panel2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(23)))), ((int)(((byte)(24)))), ((int)(((byte)(29)))));
-            this.guna2Panel2.Controls.Add(this.guna2Button1);
+            this.guna2Panel2.Controls.Add(this.drinkBtn);
+            this.guna2Panel2.Controls.Add(this.dessertbtn);
             this.guna2Panel2.Controls.Add(this.linkLabel1);
             this.guna2Panel2.Controls.Add(this.menuBtn);
             this.guna2Panel2.Location = new System.Drawing.Point(13, 76);
@@ -228,30 +219,13 @@ namespace DKSystem
             this.guna2Panel2.Size = new System.Drawing.Size(234, 565);
             this.guna2Panel2.TabIndex = 18;
             // 
-            // guna2Button1
-            // 
-            this.guna2Button1.BorderRadius = 5;
-            this.guna2Button1.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
-            this.guna2Button1.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
-            this.guna2Button1.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.guna2Button1.FillColor = System.Drawing.Color.Gray;
-            this.guna2Button1.Font = new System.Drawing.Font("Segoe UI", 9F);
-            this.guna2Button1.ForeColor = System.Drawing.Color.White;
-            this.guna2Button1.Location = new System.Drawing.Point(20, 509);
-            this.guna2Button1.Name = "guna2Button1";
-            this.guna2Button1.Size = new System.Drawing.Size(52, 34);
-            this.guna2Button1.TabIndex = 3;
-            this.guna2Button1.Text = "Exit";
-            this.guna2Button1.Click += new System.EventHandler(this.guna2Button1_Click);
-            // 
             // linkLabel1
             // 
             this.linkLabel1.AutoSize = true;
             this.linkLabel1.Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.linkLabel1.LinkBehavior = System.Windows.Forms.LinkBehavior.NeverUnderline;
             this.linkLabel1.LinkColor = System.Drawing.Color.White;
-            this.linkLabel1.Location = new System.Drawing.Point(16, 472);
+            this.linkLabel1.Location = new System.Drawing.Point(7, 533);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(56, 21);
             this.linkLabel1.TabIndex = 2;
@@ -268,7 +242,7 @@ namespace DKSystem
             this.guna2Button3.FillColor = System.Drawing.Color.Transparent;
             this.guna2Button3.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2Button3.ForeColor = System.Drawing.Color.Black;
-            this.guna2Button3.Location = new System.Drawing.Point(1033, 522);
+            this.guna2Button3.Location = new System.Drawing.Point(1033, 510);
             this.guna2Button3.Name = "guna2Button3";
             this.guna2Button3.Size = new System.Drawing.Size(72, 23);
             this.guna2Button3.TabIndex = 20;
@@ -283,14 +257,13 @@ namespace DKSystem
             this.orderPanel.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.orderPanel.Location = new System.Drawing.Point(804, 76);
             this.orderPanel.Name = "orderPanel";
-            this.orderPanel.Size = new System.Drawing.Size(300, 446);
+            this.orderPanel.Size = new System.Drawing.Size(300, 428);
             this.orderPanel.TabIndex = 21;
             // 
             // panel2
             // 
             this.panel2.AutoScroll = true;
             this.panel2.BackColor = System.Drawing.Color.White;
-            this.panel2.Controls.Add(this.guna2ImageButton1);
             this.panel2.Controls.Add(this.label8);
             this.panel2.Controls.Add(this.guna2NumericUpDown1);
             this.panel2.Controls.Add(this.label7);
@@ -317,6 +290,11 @@ namespace DKSystem
             this.guna2NumericUpDown1.Cursor = System.Windows.Forms.Cursors.IBeam;
             this.guna2NumericUpDown1.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.guna2NumericUpDown1.Location = new System.Drawing.Point(94, 56);
+            this.guna2NumericUpDown1.Minimum = new decimal(new int[] {
+            1,
+            0,
+            0,
+            0});
             this.guna2NumericUpDown1.Name = "guna2NumericUpDown1";
             this.guna2NumericUpDown1.Size = new System.Drawing.Size(98, 29);
             this.guna2NumericUpDown1.TabIndex = 3;
@@ -365,19 +343,73 @@ namespace DKSystem
             this.totalPriceLbl.TabIndex = 22;
             this.totalPriceLbl.Text = "0";
             // 
-            // guna2ImageButton1
+            // dineInBtn
             // 
-            this.guna2ImageButton1.CheckedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.HoverState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Image = global::DKSystem.Properties.Resources.ic_baseline_minus;
-            this.guna2ImageButton1.ImageOffset = new System.Drawing.Point(0, 0);
-            this.guna2ImageButton1.ImageRotate = 0F;
-            this.guna2ImageButton1.ImageSize = new System.Drawing.Size(20, 20);
-            this.guna2ImageButton1.Location = new System.Drawing.Point(260, 9);
-            this.guna2ImageButton1.Name = "guna2ImageButton1";
-            this.guna2ImageButton1.PressedState.ImageSize = new System.Drawing.Size(64, 64);
-            this.guna2ImageButton1.Size = new System.Drawing.Size(20, 20);
-            this.guna2ImageButton1.TabIndex = 5;
+            this.dineInBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dineInBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dineInBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dineInBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dineInBtn.FillColor = System.Drawing.Color.Silver;
+            this.dineInBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dineInBtn.ForeColor = System.Drawing.Color.Black;
+            this.dineInBtn.Location = new System.Drawing.Point(804, 510);
+            this.dineInBtn.Name = "dineInBtn";
+            this.dineInBtn.Size = new System.Drawing.Size(101, 42);
+            this.dineInBtn.TabIndex = 23;
+            this.dineInBtn.Text = "DINE-IN";
+            this.dineInBtn.Click += new System.EventHandler(this.dineInBtn_Click);
+            // 
+            // takeOutBtn
+            // 
+            this.takeOutBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.takeOutBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.takeOutBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.takeOutBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.takeOutBtn.FillColor = System.Drawing.Color.Silver;
+            this.takeOutBtn.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.takeOutBtn.ForeColor = System.Drawing.Color.Black;
+            this.takeOutBtn.Location = new System.Drawing.Point(911, 510);
+            this.takeOutBtn.Name = "takeOutBtn";
+            this.takeOutBtn.Size = new System.Drawing.Size(116, 42);
+            this.takeOutBtn.TabIndex = 24;
+            this.takeOutBtn.Text = "TAKE-OUT";
+            this.takeOutBtn.Click += new System.EventHandler(this.takeOutBtn_Click);
+            // 
+            // drinkBtn
+            // 
+            this.drinkBtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.drinkBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.drinkBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.drinkBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.drinkBtn.FillColor = System.Drawing.Color.Transparent;
+            this.drinkBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.drinkBtn.ForeColor = System.Drawing.Color.White;
+            this.drinkBtn.Image = global::DKSystem.Properties.Resources.ri_drinks_2_line;
+            this.drinkBtn.Location = new System.Drawing.Point(-1, 124);
+            this.drinkBtn.Name = "drinkBtn";
+            this.drinkBtn.Size = new System.Drawing.Size(236, 45);
+            this.drinkBtn.TabIndex = 4;
+            this.drinkBtn.Text = "DRINKS";
+            this.drinkBtn.Click += new System.EventHandler(this.guna2Button2_Click);
+            // 
+            // dessertbtn
+            // 
+            this.dessertbtn.DisabledState.BorderColor = System.Drawing.Color.DarkGray;
+            this.dessertbtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
+            this.dessertbtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
+            this.dessertbtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
+            this.dessertbtn.FillColor = System.Drawing.Color.Transparent;
+            this.dessertbtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.dessertbtn.ForeColor = System.Drawing.Color.White;
+            this.dessertbtn.Image = global::DKSystem.Properties.Resources.ep_dessert;
+            this.dessertbtn.ImageOffset = new System.Drawing.Point(5, 0);
+            this.dessertbtn.Location = new System.Drawing.Point(-1, 175);
+            this.dessertbtn.Name = "dessertbtn";
+            this.dessertbtn.Size = new System.Drawing.Size(236, 45);
+            this.dessertbtn.TabIndex = 3;
+            this.dessertbtn.Text = "DESSERTS";
+            this.dessertbtn.TextOffset = new System.Drawing.Point(5, 0);
+            this.dessertbtn.Click += new System.EventHandler(this.dessertbtn_Click);
             // 
             // menuBtn
             // 
@@ -388,12 +420,13 @@ namespace DKSystem
             this.menuBtn.FillColor = System.Drawing.Color.Purple;
             this.menuBtn.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuBtn.ForeColor = System.Drawing.Color.White;
-            this.menuBtn.Image = global::DKSystem.Properties.Resources.bx_food_menu;
+            this.menuBtn.Image = global::DKSystem.Properties.Resources.bx_dish;
             this.menuBtn.Location = new System.Drawing.Point(-1, 73);
             this.menuBtn.Name = "menuBtn";
             this.menuBtn.Size = new System.Drawing.Size(236, 45);
             this.menuBtn.TabIndex = 0;
-            this.menuBtn.Text = "MENU";
+            this.menuBtn.Text = "DISHES";
+            this.menuBtn.Click += new System.EventHandler(this.menuBtn_Click);
             // 
             // btnHam
             // 
@@ -410,6 +443,8 @@ namespace DKSystem
             // 
             this.BackColor = System.Drawing.Color.LightGray;
             this.ClientSize = new System.Drawing.Size(1117, 654);
+            this.Controls.Add(this.takeOutBtn);
+            this.Controls.Add(this.dineInBtn);
             this.Controls.Add(this.totalPriceLbl);
             this.Controls.Add(this.orderPanel);
             this.Controls.Add(this.guna2Button3);
@@ -419,7 +454,7 @@ namespace DKSystem
             this.Controls.Add(this.generateBtn);
             this.Controls.Add(this.panel1);
             this.Controls.Add(this.titleBar);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
             this.Name = "frmPOS";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmPOS";
@@ -445,12 +480,9 @@ namespace DKSystem
 
 
         #endregion
-
-        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
         private System.Windows.Forms.Panel titleBar;
         private System.Windows.Forms.PictureBox btnHam;
         private System.Windows.Forms.Label label1;
-        private Guna.UI2.WinForms.Guna2AnimateWindow guna2AnimateWindow1;
         private Guna.UI2.WinForms.Guna2DragControl guna2DragControl1;
         private System.Windows.Forms.Panel panel1;
         private Guna.UI2.WinForms.Guna2Button generateBtn;
@@ -472,9 +504,11 @@ namespace DKSystem
         private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
         private Guna.UI2.WinForms.Guna2CheckBox guna2CheckBox1;
         private Guna.UI2.WinForms.Guna2Panel guna2Panel4;
-        private Guna.UI2.WinForms.Guna2Button guna2Button1;
-        private Guna.UI2.WinForms.Guna2ImageButton guna2ImageButton1;
         private System.Windows.Forms.Label label9;
+        private Guna.UI2.WinForms.Guna2Button dineInBtn;
+        private Guna.UI2.WinForms.Guna2Button takeOutBtn;
+        private Guna.UI2.WinForms.Guna2Button drinkBtn;
+        private Guna.UI2.WinForms.Guna2Button dessertbtn;
     }
 }
 

@@ -38,7 +38,7 @@ namespace DKSystem
                 menuContentPanel.Controls.Clear();
                 MySqlConnection con = new MySqlConnection(connString);
                 con.Open();
-                string qry = "SELECT * FROM `foods`";
+                string qry = "SELECT * FROM `dishes`";
                 MySqlCommand cmd = new MySqlCommand(qry, con);
                 MySqlDataReader reader = cmd.ExecuteReader();
                 while (reader.Read())
@@ -60,7 +60,7 @@ namespace DKSystem
                         Name = "foodCheck",
                         Size = new System.Drawing.Size(248, 75),
                         TabIndex = 0,
-                        Text = reader.GetString("name"),
+                        Text = reader.GetString("dishName"),
                         TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
                         UncheckedState = { BorderColor = System.Drawing.Color.FromArgb(125, 137, 149), BorderRadius = 0, BorderThickness = 0, FillColor = System.Drawing.Color.FromArgb(125, 137, 149) }
                     };
@@ -185,11 +185,16 @@ namespace DKSystem
                             Size = new System.Drawing.Size(98, 29),
                             TabIndex = 3,
                             Value = new decimal(new int[] {
-                        1,
-                        0,
-                        0,
-                        0})
-                        };
+                            1,
+                            0,
+                            0,
+                            0}),
+                            Minimum = new decimal(new int[] {
+                            1,
+                            0,
+                            0,
+                            0})
+                    };
                         quanNum.ValueChanged += (s, ev) => UpdatePrice();
 
                         orderPanel.Controls.Add(panel);
@@ -255,32 +260,251 @@ namespace DKSystem
             }
         }
 
+        bool isDineIn = false, isTakeOut = false;
+
+        private void dineInBtn_Click(object sender, EventArgs e)
+        {
+            if (!isDineIn)
+            {
+                isDineIn = true;
+                isTakeOut = false;
+                dineInBtn.FillColor = Color.DeepSkyBlue;
+                takeOutBtn.FillColor = Color.Silver;
+            }
+        }
+
+        private void takeOutBtn_Click(object sender, EventArgs e)
+        {
+            if (!isTakeOut)
+            {
+                isDineIn = false;
+                isTakeOut = true;
+                dineInBtn.FillColor = Color.Silver;
+                takeOutBtn.FillColor = Color.DeepSkyBlue;
+            }
+        }
+
         private int orderNumber = 87482;
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            menuBtn.FillColor = Color.Transparent;
+            dessertbtn.FillColor = Color.Transparent;
+            drinkBtn.FillColor = Color.Purple;
+            try
+            {
+                menuContentPanel.Controls.Clear();
+                MySqlConnection con = new MySqlConnection(connString);
+                con.Open();
+                string qry = "SELECT * FROM `drinks`";
+                MySqlCommand cmd = new MySqlCommand(qry, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Guna.UI2.WinForms.Guna2Panel foodPanel = new Guna.UI2.WinForms.Guna2Panel
+                    {
+                        BackColor = System.Drawing.Color.White,
+                        Location = new System.Drawing.Point(3, 3),
+                        Name = "foodPanel",
+                        Size = new System.Drawing.Size(535, 100),
+                        TabIndex = 0
+                    };
+
+                    Guna.UI2.WinForms.Guna2CheckBox foodCheck = new Guna.UI2.WinForms.Guna2CheckBox
+                    {
+                        CheckedState = { BorderColor = System.Drawing.Color.FromArgb(94, 148, 255), BorderRadius = 0, BorderThickness = 0, FillColor = System.Drawing.Color.FromArgb(94, 148, 255) },
+                        Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
+                        Location = new System.Drawing.Point(34, 11),
+                        Name = "foodCheck",
+                        Size = new System.Drawing.Size(248, 75),
+                        TabIndex = 0,
+                        Text = reader.GetString("drinkName"),
+                        TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                        UncheckedState = { BorderColor = System.Drawing.Color.FromArgb(125, 137, 149), BorderRadius = 0, BorderThickness = 0, FillColor = System.Drawing.Color.FromArgb(125, 137, 149) }
+                    };
+
+                    Label priceLbl = new Label
+                    {
+                        AutoSize = true,
+                        Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                        Location = new System.Drawing.Point(358, 40),
+                        Name = "priceLbl",
+                        Size = new System.Drawing.Size(45, 16),
+                        TabIndex = 1,
+                        Text = "Price: ₱" + reader.GetDouble("price")
+                    };
+
+                    foodCheck.CheckedChanged += new System.EventHandler(foodCheck_CheckChanged);
+
+                    menuContentPanel.Controls.Add(foodPanel);
+                    foodPanel.Controls.Add(foodCheck);
+                    foodPanel.Controls.Add(priceLbl);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void dessertbtn_Click(object sender, EventArgs e)
+        {
+            drinkBtn.FillColor = Color.Transparent;
+            dessertbtn.FillColor = Color.Transparent;
+            dessertbtn.FillColor = Color.Purple;
+            try
+            {
+                menuContentPanel.Controls.Clear();
+                MySqlConnection con = new MySqlConnection(connString);
+                con.Open();
+                string qry = "SELECT * FROM `desserts`";
+                MySqlCommand cmd = new MySqlCommand(qry, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Guna.UI2.WinForms.Guna2Panel foodPanel = new Guna.UI2.WinForms.Guna2Panel
+                    {
+                        BackColor = System.Drawing.Color.White,
+                        Location = new System.Drawing.Point(3, 3),
+                        Name = "foodPanel",
+                        Size = new System.Drawing.Size(535, 100),
+                        TabIndex = 0
+                    };
+
+                    Guna.UI2.WinForms.Guna2CheckBox foodCheck = new Guna.UI2.WinForms.Guna2CheckBox
+                    {
+                        CheckedState = { BorderColor = System.Drawing.Color.FromArgb(94, 148, 255), BorderRadius = 0, BorderThickness = 0, FillColor = System.Drawing.Color.FromArgb(94, 148, 255) },
+                        Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
+                        Location = new System.Drawing.Point(34, 11),
+                        Name = "foodCheck",
+                        Size = new System.Drawing.Size(248, 75),
+                        TabIndex = 0,
+                        Text = reader.GetString("dessertName"),
+                        TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                        UncheckedState = { BorderColor = System.Drawing.Color.FromArgb(125, 137, 149), BorderRadius = 0, BorderThickness = 0, FillColor = System.Drawing.Color.FromArgb(125, 137, 149) }
+                    };
+
+                    Label priceLbl = new Label
+                    {
+                        AutoSize = true,
+                        Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                        Location = new System.Drawing.Point(358, 40),
+                        Name = "priceLbl",
+                        Size = new System.Drawing.Size(45, 16),
+                        TabIndex = 1,
+                        Text = "Price: ₱" + reader.GetDouble("price")
+                    };
+
+                    foodCheck.CheckedChanged += new System.EventHandler(foodCheck_CheckChanged);
+
+                    menuContentPanel.Controls.Add(foodPanel);
+                    foodPanel.Controls.Add(foodCheck);
+                    foodPanel.Controls.Add(priceLbl);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
+
+        private void menuBtn_Click(object sender, EventArgs e)
+        {
+            drinkBtn.FillColor = Color.Transparent;
+            dessertbtn.FillColor = Color.Transparent;
+            menuBtn.FillColor = Color.Purple;
+            try
+            {
+                menuContentPanel.Controls.Clear();
+                MySqlConnection con = new MySqlConnection(connString);
+                con.Open();
+                string qry = "SELECT * FROM `dishes`";
+                MySqlCommand cmd = new MySqlCommand(qry, con);
+                MySqlDataReader reader = cmd.ExecuteReader();
+                while (reader.Read())
+                {
+                    Guna.UI2.WinForms.Guna2Panel foodPanel = new Guna.UI2.WinForms.Guna2Panel
+                    {
+                        BackColor = System.Drawing.Color.White,
+                        Location = new System.Drawing.Point(3, 3),
+                        Name = "foodPanel",
+                        Size = new System.Drawing.Size(535, 100),
+                        TabIndex = 0
+                    };
+
+                    Guna.UI2.WinForms.Guna2CheckBox foodCheck = new Guna.UI2.WinForms.Guna2CheckBox
+                    {
+                        CheckedState = { BorderColor = System.Drawing.Color.FromArgb(94, 148, 255), BorderRadius = 0, BorderThickness = 0, FillColor = System.Drawing.Color.FromArgb(94, 148, 255) },
+                        Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, 0),
+                        Location = new System.Drawing.Point(34, 11),
+                        Name = "foodCheck",
+                        Size = new System.Drawing.Size(248, 75),
+                        TabIndex = 0,
+                        Text = reader.GetString("dishName"),
+                        TextAlign = System.Drawing.ContentAlignment.MiddleCenter,
+                        UncheckedState = { BorderColor = System.Drawing.Color.FromArgb(125, 137, 149), BorderRadius = 0, BorderThickness = 0, FillColor = System.Drawing.Color.FromArgb(125, 137, 149) }
+                    };
+
+                    Label priceLbl = new Label
+                    {
+                        AutoSize = true,
+                        Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                        Location = new System.Drawing.Point(358, 40),
+                        Name = "priceLbl",
+                        Size = new System.Drawing.Size(45, 16),
+                        TabIndex = 1,
+                        Text = "Price: ₱" + reader.GetDouble("price")
+                    };
+
+                    foodCheck.CheckedChanged += new System.EventHandler(foodCheck_CheckChanged);
+
+                    menuContentPanel.Controls.Add(foodPanel);
+                    foodPanel.Controls.Add(foodCheck);
+                    foodPanel.Controls.Add(priceLbl);
+
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Error: " + ex.Message);
+            }
+        }
 
         private void guna2Button11_Click(object sender, EventArgs e)
         {
-            DateTime datenow = DateTime.Now;
-            string dateonly = Convert.ToString(datenow);
-            string[] today = dateonly.Split(' ');
-            receipt.date.Text = today[0];
-            receipt.orderNum.Text = Convert.ToString(orderNumber);
-            foreach(Control cont in orderPanel.Controls)
+            if (!isDineIn && !isTakeOut)
             {
-                if (cont is Panel panel)
+                MessageBox.Show("Please select if you want to Dine In or Take Out");
+            } else if (!orderPanel.Controls.OfType<Panel>().Any())
+            {
+                MessageBox.Show("Please Set An Order");
+            }
+            else
+            {
+                DateTime datenow = DateTime.Now;
+                string dateonly = Convert.ToString(datenow);
+                string[] today = dateonly.Split(' ');
+                receipt.date.Text = today[0];
+                receipt.orderNum.Text = Convert.ToString(orderNumber);
+                foreach (Control cont in orderPanel.Controls)
                 {
-                    foreach (Control control in panel.Controls)
+                    if (cont is Panel panel)
                     {
-                        if (control is Guna.UI2.WinForms.Guna2NumericUpDown quanNumber)
+                        foreach (Control control in panel.Controls)
                         {
-                            receipt.productInfo.Rows.Add(panel.Controls["labelName"].Text, quanNumber.Value, panel.Controls["priceNum"].Text);
+                            if (control is Guna.UI2.WinForms.Guna2NumericUpDown quanNumber)
+                            {
+                                receipt.productInfo.Rows.Add(panel.Controls["labelName"].Text, quanNumber.Value, panel.Controls["priceNum"].Text);
+                            }
                         }
                     }
                 }
+                receipt.totalPriceLbl.Text = totalPriceLbl.Text;
+                receipt.ShowDialog();
+                orderNumber++;
             }
-            receipt.totalPriceLbl.Text = totalPriceLbl.Text;
-
-            receipt.Show();
-            orderNumber++;
         }
     }
 }

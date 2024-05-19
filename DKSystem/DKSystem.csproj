@@ -197,5 +197,14 @@
   <ItemGroup>
     <None Include="Resources\ic_baseline-minus.png" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bx_dish.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ri_drinks-2-line.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ep_dessert.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
