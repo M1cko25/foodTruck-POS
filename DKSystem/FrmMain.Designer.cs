@@ -234,7 +234,7 @@ namespace DKSystem
             this.menuBtn.DisabledState.CustomBorderColor = System.Drawing.Color.DarkGray;
             this.menuBtn.DisabledState.FillColor = System.Drawing.Color.FromArgb(((int)(((byte)(169)))), ((int)(((byte)(169)))), ((int)(((byte)(169)))));
             this.menuBtn.DisabledState.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(141)))), ((int)(((byte)(141)))), ((int)(((byte)(141)))));
-            this.menuBtn.FillColor = System.Drawing.Color.Transparent;
+            this.menuBtn.FillColor = System.Drawing.Color.DarkGray;
             this.menuBtn.Font = new System.Drawing.Font("Segoe UI Semibold", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.menuBtn.ForeColor = System.Drawing.Color.White;
             this.menuBtn.Image = global::DKSystem.Properties.Resources.bx_dish;

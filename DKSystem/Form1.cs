@@ -19,8 +19,12 @@ namespace DKSystem
 
         private void backBtn_Click(object sender, EventArgs e)
         {
-            productInfo.Rows.Clear();
             this.Hide();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+
         }
     }
 }
