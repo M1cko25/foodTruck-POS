@@ -135,9 +135,10 @@ namespace DKSystem
                         Label name = new Label()
                         {
                             AutoSize = true,
-                            Location = new System.Drawing.Point(17, 9),
+                            Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                            Location = new System.Drawing.Point(21, 15),
                             Name = "labelName",
-                            Size = new System.Drawing.Size(118, 30),
+                            Size = new System.Drawing.Size(115, 25),
                             TabIndex = 0,
                             Text = checkbox.Text
                         };
@@ -146,7 +147,7 @@ namespace DKSystem
                         {
                             AutoSize = true,
                             Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                            Location = new System.Drawing.Point(18, 107),
+                            Location = new System.Drawing.Point(22, 93),
                             Name = "priceLabel",
                             Size = new System.Drawing.Size(54, 21),
                             TabIndex = 2,
@@ -156,8 +157,10 @@ namespace DKSystem
                         Label priceNum = new Label
                         {
                             AutoSize = true,
+                            BackColor = System.Drawing.SystemColors.Window,
                             Font = new System.Drawing.Font("Segoe UI Semibold", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                            Location = new System.Drawing.Point(78, 108),
+                            ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(56)))), ((int)(((byte)(236))))),
+                            Location = new System.Drawing.Point(90, 93),
                             Name = "priceNum",
                             Size = new System.Drawing.Size(50, 20),
                             TabIndex = 4,
@@ -168,7 +171,7 @@ namespace DKSystem
                         {
                             AutoSize = true,
                             Font = new System.Drawing.Font("Segoe UI Semibold", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
-                            Location = new System.Drawing.Point(18, 59),
+                            Location = new System.Drawing.Point(22, 59),
                             Name = "quanLbl",
                             Size = new System.Drawing.Size(80, 21),
                             TabIndex = 1,
@@ -179,22 +182,24 @@ namespace DKSystem
                         {
                             BackColor = System.Drawing.Color.Transparent,
                             Cursor = System.Windows.Forms.Cursors.IBeam,
-                            Font = new System.Drawing.Font("Segoe UI", 9F),
-                            Location = new System.Drawing.Point(94, 56),
-                            Name = "quanNum",
-                            Size = new System.Drawing.Size(98, 29),
-                            TabIndex = 3,
-                            Value = new decimal(new int[] {
-                            1,
-                            0,
-                            0,
-                            0}),
+                            Font = new System.Drawing.Font("Segoe UI Semibold", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0))),
+                            Location = new System.Drawing.Point(101, 56),
+                            Margin = new System.Windows.Forms.Padding(3, 4, 3, 4),
                             Minimum = new decimal(new int[] {
-                            1,
-                            0,
-                            0,
-                            0})
-                    };
+                                1,
+                                0,
+                                0,
+                                0}),
+                            Name = "quanNum",
+                            Size = new System.Drawing.Size(69, 23),
+                            TabIndex = 3,
+                            UpDownButtonFillColor = System.Drawing.Color.FromArgb(((int)(((byte)(131)))), ((int)(((byte)(56)))), ((int)(((byte)(236))))),
+                            Value = new decimal(new int[] {
+                                1,
+                                0,
+                                0,
+                                0}),
+                        };
                         quanNum.ValueChanged += (s, ev) => UpdatePrice();
 
                         orderPanel.Controls.Add(panel);
@@ -258,6 +263,7 @@ namespace DKSystem
                     }
                 }
             }
+            UpdatePrice();
         }
 
         bool isDineIn = false, isTakeOut = false;
@@ -268,8 +274,8 @@ namespace DKSystem
             {
                 isDineIn = true;
                 isTakeOut = false;
-                dineInBtn.FillColor = Color.DeepSkyBlue;
-                takeOutBtn.FillColor = Color.Silver;
+                dineInBtn.FillColor = Color.WhiteSmoke;
+                takeOutBtn.FillColor = Color.White;
             }
         }
 
@@ -279,8 +285,8 @@ namespace DKSystem
             {
                 isDineIn = false;
                 isTakeOut = true;
-                dineInBtn.FillColor = Color.Silver;
-                takeOutBtn.FillColor = Color.DeepSkyBlue;
+                dineInBtn.FillColor = Color.White;
+                takeOutBtn.FillColor = Color.WhiteSmoke;
             }
         }
 
@@ -290,7 +296,7 @@ namespace DKSystem
         {
             menuBtn.FillColor = Color.Transparent;
             dessertbtn.FillColor = Color.Transparent;
-            drinkBtn.FillColor = Color.Purple;
+            drinkBtn.FillColor = Color.DarkGray;
             try
             {
                 menuContentPanel.Controls.Clear();
@@ -351,8 +357,8 @@ namespace DKSystem
         private void dessertbtn_Click(object sender, EventArgs e)
         {
             drinkBtn.FillColor = Color.Transparent;
-            dessertbtn.FillColor = Color.Transparent;
-            dessertbtn.FillColor = Color.Purple;
+            menuBtn.FillColor = Color.Transparent;
+            dessertbtn.FillColor = Color.DarkGray;
             try
             {
                 menuContentPanel.Controls.Clear();
@@ -414,7 +420,7 @@ namespace DKSystem
         {
             drinkBtn.FillColor = Color.Transparent;
             dessertbtn.FillColor = Color.Transparent;
-            menuBtn.FillColor = Color.Purple;
+            menuBtn.FillColor = Color.DarkGray;
             try
             {
                 menuContentPanel.Controls.Clear();
@@ -470,6 +476,36 @@ namespace DKSystem
             {
                 MessageBox.Show("Error: " + ex.Message);
             }
+        }
+
+        private void guna2Button1_Click_1(object sender, EventArgs e)
+        {
+
+        }
+
+        private void panel2_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void guna2CheckBox1_CheckedChanged(object sender, EventArgs e)
+        {
+
+        }
+
+        private void totalPriceLbl_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click_2(object sender, EventArgs e)
+        {
+
+        }
+
+        private void guna2Button1_Click_3(object sender, EventArgs e)
+        {
+
         }
 
         private void guna2Button11_Click(object sender, EventArgs e)
